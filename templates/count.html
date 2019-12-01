@@ -1,13 +1,9 @@
-<h1><a href="{% url 'home' %}">Word Count</a></h1>
-
-<h2>The number of the words is {{ wordsList }}</h2>
-
-<h3>Your Text:</h3>
+<a href="{% url 'home' %}"><h1>Word Count</h1></a>
+<h2>There are {{number_of_words}} words in your text.</h2>
+<h2>The Text is:</h2>
 <div>{{ fulltext }}</div>
+<h2>List Of Words:</h2>
+{% for word, counted in sorted_words %} {{word}} - {{counted}}
 <br />
 
-<h3>Counted:</h3>
-
-{% for word, counted in sorted_words %} {{ word }} - {{ counted }}
-<br />
 {% endfor %}
