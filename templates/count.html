@@ -1,1 +1,13 @@
-Counted!
+<h1><a href="{% url 'home' %}">Word Count</a></h1>
+
+<h2>The number of the words is {{ wordsList }}</h2>
+
+<h3>Your Text:</h3>
+<div>{{ fulltext }}</div>
+<br />
+
+<h3>Counted:</h3>
+
+{% for word, counted in sorted_words %} {{ word }} - {{ counted }}
+<br />
+{% endfor %}
